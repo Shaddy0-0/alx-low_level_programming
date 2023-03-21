@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
-* main - A c file to display the sizes of built in data types in c
+* main - prints the size of carious types
+*
 * Return - 0 signifying program success
 */
 int main(void)
