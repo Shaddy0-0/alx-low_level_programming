@@ -3,36 +3,29 @@
 
 /**
  * main - prints a Fizz Buzz program
+ * Description: prints the number 1 - 100 w/
+ * Fizz for multiple of 3, Buzz for multiple of 5.
+ * and Fizzbuzz for multiples of both
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int x;
+	int i;
 
-	for (x = 1; x <= 100; x++)
+	for (i = 1; i <= 100; i++)
 	{
-		if ((x % 3 == 0) % (x % 5 == 0))
-		{
+		if (i % 15 == 0)
 			printf("FizzBuzz");
-		}
-		else if (x % 3 == 0)
-		{
+		else if (i % 3 == 0)
 			printf("Fizz");
-		}
-		else if (x % 5 == 0)
-		{
+		else if (i % 5 == 0)
 			printf("Buzz");
-		}
 		else
-		{
-			printf("%d", x);
-		}
-		if (x != 100)
-		{
+			printf("%i", i);
+		if (i < 100)
 			printf(" ");
 		}
-	}
 	printf("\n");
 	return (0);
 }
