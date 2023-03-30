@@ -1,36 +1,27 @@
 #include "main.h"
 
 /**
-* cap_string - Capitalizes all words of a string.
-* @str: The string to be capitalized.
-* Return: A pointer to the changed string.
-*/
-
-char *cap_string(char *str)
+ * cap_string - converts string words to be capitalized
+ * @s: input string to have all words capitalized
+ *
+ * Return: string after conversion to Capitalize words
+ */
+char *cap_string(char *s)
 {
-int index = 0;
+	int i;
 
-while (str[index])
-{
-while (!(str[index] >= 'a' && str[index] <= 'z'))
-index++;
-if (str[index - 1] == ' ' ||
-str[index - 1] == '\t' ||
-str[index - 1] == '\n' ||
-str[index - 1] == '.' ||
-str[index - 1] == '-' ||
-str[index - 1] == ',' ||
-str[index - 1] == '_' ||
-str[index - 1] == '!' ||
-str[index - 1] == '?' ||
-str[index - 1] == '"' ||
-str[index - 1] == '(' ||
-str[index - 1] == ')' ||
-str[index - 1] == '{' ||
-str[index - 1] == '}' ||
-index == 0)
-str[index] -= 32;
-index++;
-}
-return (str);
+	if (s[0] > 96 && s[0] < 123)
+		s[0] -= 32;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		switch (s[i])
+		{
+		case ' ': case '\n': case '\t': case ',':
+		case ';': case '.': case '!': case '?': case '"':
+		case '(': case ')': case '{': case '}':
+			if (s[i + 1] > 96 && s[i + 1] < 123)
+				s[i + 1] -= 32;
+		}
+	}
+	return (s);
 }
