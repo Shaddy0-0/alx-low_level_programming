@@ -2,24 +2,19 @@
 #include <stdio.h>
 
 /**
- * print_chessboard - print the chessboard
- * @a: the board to print
+ * print_chessboard - entry point
+ * @a: array
+ * Return: Always 0
  */
 
-void print_chessboard(char (*a)[8])
+void print_chessboard(char (*a)[8]);
 {
-	int i, j;
-
-	i = j = 0;
-	while (i < 8)
+	int i;
+	int j;
+	for (i = 0; i < 8; i++)
 	{
-		j = 0;
-		while (j < 8)
-		{
-_putchar(a[i][j]);
-			j++;
-		}
-_putchar('\n');
-		i++;
+		for (j = 0; j < 8; j++)
+			_putchar(a[i][j]);
+		_putchar('\n');
 	}
 }
